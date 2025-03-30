@@ -1,4 +1,4 @@
-const API_KEY =/*"b73708099f812bb2372b868623eb2050";*/"c2f8c21a6a2133c0010380a9f6a3e33d";
+const API_KEY ="b73708099f812bb2372b868623eb2050";/*"c2f8c21a6a2133c0010380a9f6a3e33d";*/
 
 export const fetchExchangeRate = async (from, to, amount) => {
   try {
