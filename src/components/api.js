@@ -1,12 +1,15 @@
-const API_KEY ="b73708099f812bb2372b868623eb2050";/*"c2f8c21a6a2133c0010380a9f6a3e33d";*/
+const API_KEY ="b73708099f812bb2372b868623eb2050";
+/*"c2f8c21a6a2133c0010380a9f6a3e33d";*/
 
 export const fetchExchangeRate = async (from, to, amount) => {
   try {
+    if (!amount || amount <= 0) {
+  amount = 1;
+}
     const response = await fetch(
       `https://api.exchangerate.host/convert?from=${from}&to=${to}&amount=${amount}&access_key=${API_KEY}`
     );
     const data = await response.json();
-
     if (data.success && data.result !== undefined) {
       return data.result.toFixed(2);
     } else {
